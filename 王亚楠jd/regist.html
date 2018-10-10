@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			ul,li,ol,p,body,dl,dt,dd,h1,h2,h3,h4,h5,h6,img{
+				margin:0;padding:0;
+			}
+			body,html{
+				font-size:12px;
+				font-family:"微软雅黑"
+			}
+			ul,li,ol{
+				list-style:none;
+			}
+			a,s,u,i{
+				text-decoration:none;
+				color:#333;
+			}
+			h1,h2,h3,h4,h5,h6{font-weight:normal}
+			div[id]{width:402px;margin:0 auto;}
+
+			#header{height: 60px;margin-top: 100px;margin-bottom: 50px;}
+
+			#section{height: 550px;}
+			#section .common{height: 75px;width: 400px;border: 1px solid #aaa;line-height: 55px;
+							font-size: 12px;color: #444;margin-bottom: 40px;}				
+			#section .common span{display: inline-block;margin-left: 20px;letter-spacing: 3px;}
+			#section .common input{margin-left: 20px;height: 35px;width: 250px;color: #aaa;border: none;outline:hidden;}
+
+			#section .common-p{color: #AAAAAA;display:none; line-height: 20px;}
+			#section .common-p.active{display: block;}
+
+			#section button{width: 400px;height: 50px;text-align: center;color: #fff;background: #e2231a;border: none;font-size: 14px;}
+
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			<img src="img/jd_03.png" />
+		</div>
+		<div id="section">
+			<div class="common">
+				<div class="Name">
+					<span>用户名</span><input id="nameInput" type="text" value="您的账户名和登录名" />
+				</div>
+			<p class="common-p" id="Name-p">支持中文、英文、数字、“-”、“_”的组合，4-20个字符</p>
+			</div>
+			
+			<div class="common">
+				<div class="setPwd">
+					<span>设置密码</span><input id="setPwd" type="password" value="建议使用两种或两种以上字符组合" />
+				</div>
+				<p class="common-p" id="pwd-p">建议使用字母、数字和符号两种及以上的组合，6-20个字符</p>			
+			</div>
+			
+			<div class="common">
+				<div class="retPwd">
+					<span>确认密码</span><input id="retPwd" type="password" value="建议使用两种或两种以上字符组合" />
+				</div>
+				<p class="common-p" id="repwd-p">请再次输入相同的密码</p>			
+			</div>
+			
+			<div class="common">
+				<div class="email">
+					<span>邮箱验证</span><input id="email" type="text" value="请输入邮箱"/>
+				</div>
+				<p class="common-p" id="emailp">请输入正确的邮箱格式</p>			
+			</div>
+			<button id="regBtn">立即注册</button>
+		</div>
+		<div id="box"></div>
+	</body>
+	<script src="js/ajax.js" ></script>
+	<script src="js/JDreg.js"></script>
+	
+</html>

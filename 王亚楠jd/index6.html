@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{margin: 100px 400px;}
+         input{width: 300px;height: 35px;margin-top:20px;outline: medium;}
+        button{width: 304px;height:35px;background: red;
+            border: 2px solid red;margin:20px 0;}
+            a{color: red;}
+    </style>
+    <script src="js/common.js"></script>
+</head>
+<body>
+    <input type="text" id="account" placeholder="请输入用户名"><br /> 
+    <input type="password" id="pwd" placeholder="请输入密码"> <br />
+    <button id="btn">登录</button><br />
+    <p><input type="checkbox" id="check_save" />保存密码十五天</p>
+   
+</body>
+<script>
+    
+			var oBtn = document.getElementById("btn");
+			var oCheckBox = document.getElementById("check_save");
+		
+			var oAccount = document.getElementById("account");
+			var oPwd = document.getElementById("pwd");
+			oBtn.onclick = function(){
+				if(oCheckBox.checked){
+					
+					setCookie("account",oAccount.value,{
+						expires:15
+					});
+					
+					setCookie("pwd",oPwd.value,{
+						expires:15
+					});
+				}
+			}
+			if(getCookie("account")&&getCookie("pwd")){
+				oAccount.value = getCookie("account");
+				oPwd.value = getCookie("pwd");
+			}
+    
+
+</script>
+</html>
